@@ -10,7 +10,7 @@ namespace CommonProblems
     {
         static void Main(string[] args)
         {
-            BackTrackQueenProblem q = new BackTrackQueenProblem(8);
+            BackTrackQueenProblem q = new BackTrackQueenProblem(4);
             q.Solution();
             q.Print();
 

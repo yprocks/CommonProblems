@@ -8,6 +8,8 @@ namespace CommonProblems
 {
     class BackTrackQueenProblem
     {
+        private readonly char QUEENCHAR = 'Q';
+
         public char[][] Board { get; set; }
         public int Size { get; set; }
 
@@ -21,44 +23,42 @@ namespace CommonProblems
 
         public void Solution()
         {
-            SolveProblem(0);
+            SolveProblem(0, Board);
         }
 
-        private bool SolveProblem(int col)
+        private bool SolveProblem(int col, char[][] board)
         {
             if (col >= Size)
                 return true;
 
-            for (int i = 0; i < Board.Length; i++)
-                if (PlaceQueen(i, col))
+            for (int i = 0; i < board.Length; i++)
+                if (PlaceQueen(board, i, col))
                 {
-                    Board[i][col] = 'Q';
-                    if (SolveProblem(col + 1))
+                    board[i][col] = QUEENCHAR;
+                    if (SolveProblem(col + 1, board))
                         return true;
-                    Board[i][col] = ' ';
+                    board[i][col] = ' ';
                 }
-
-
             return false;
         }
 
-        private bool PlaceQueen(int row, int col)
+        private bool PlaceQueen(char[][] board, int row, int col)
         {
             int i, j;
 
             // Check Row Victim (Do not need to check further)
             for (i = 0; i < col; i++)
-                if (Board[row][i] == 'Q')
+                if (board[row][i] == QUEENCHAR)
                     return false;
 
             // Check digonal Victim -- 
             for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
-                if (Board[i][j] == 'Q')
+                if (board[i][j] == QUEENCHAR)
                     return false;
 
             // Check diagonal Victim +-
             for (i = row, j = col; i < Size && j >= 0; i++, j--)
-                if (Board[i][j] == 'Q')
+                if (board[i][j] == QUEENCHAR)
                     return false;
 
             return true;
@@ -74,9 +74,18 @@ namespace CommonProblems
 
             for (int i = 0; i < Board.Length; i++)
             {
+                if (i < 9)
+                    Console.Write(" ");
                 Console.Write((i + 1) + " ");
                 for (int j = 0; j < Board[i].Length; j++)
-                    Console.Write(Board[i][j] + " ");
+                {
+                    if (j > 9)
+                        Console.Write(" ");
+                    if (Board[i][j] == QUEENCHAR)
+                        Console.Write(Board[i][j] + " ");
+                    else
+                        Console.Write("- ");
+                }
                 Console.WriteLine();
             }
         }
