@@ -10,6 +10,11 @@ namespace CommonProblems
     {
         static void Main(string[] args)
         {
+            BackTrackQueenProblem q = new BackTrackQueenProblem(8);
+            q.Solution();
+            q.Print();
+
+            Console.ReadLine();
         }
     }
 }
