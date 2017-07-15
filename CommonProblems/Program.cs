@@ -10,9 +10,13 @@ namespace CommonProblems
     {
         static void Main(string[] args)
         {
-            BackTrackQueenProblem q = new BackTrackQueenProblem(4);
-            q.Solution();
-            q.Print();
+            // BackTrackQueenProblem q = new BackTrackQueenProblem(4);
+            // q.Solution();
+            // q.Print();
+
+            NaiveStringMatching mat = new NaiveStringMatching();
+            bool res = mat.MatchString("This is my own text", "is");
+            Console.WriteLine(res);
 
             Console.ReadLine();
         }
