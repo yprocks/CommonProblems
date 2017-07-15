@@ -14,8 +14,12 @@ namespace CommonProblems
             // q.Solution();
             // q.Print();
 
-            NaiveStringMatching mat = new NaiveStringMatching();
-            bool res = mat.MatchString("This is my own text", "is");
+            //NaiveStringMatching mat = new NaiveStringMatching();
+            //bool res = mat.MatchString("This is my own text", "is");
+            //Console.WriteLine(res);
+
+            RabinKarpMatching mat = new RabinKarpMatching();
+            bool res = mat.MatchString("abskabacmgdyl;", "bac");
             Console.WriteLine(res);
 
             Console.ReadLine();
