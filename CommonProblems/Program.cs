@@ -13,14 +13,13 @@ namespace CommonProblems
             // BackTrackQueenProblem q = new BackTrackQueenProblem(4);
             // q.Solution();
             // q.Print();
-
-            //NaiveStringMatching mat = new NaiveStringMatching();
-            //bool res = mat.MatchString("This is my own text", "is");
+            
+            StringMatching mat = new StringMatching();
+            //bool res = mat.NaiveMatchString("This is my own text", "is");
             //Console.WriteLine(res);
 
-            RabinKarpMatching mat = new RabinKarpMatching();
-            bool res = mat.MatchString("abskabacmgdyl;", "bac");
-            Console.WriteLine(res);
+            //bool res = mat.RabinKarpMatchString("abskabacmgdyl;", "bac");
+            //Console.WriteLine(res);
 
             Console.ReadLine();
         }

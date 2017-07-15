@@ -43,10 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackTrackQueenProblem.cs" />
-    <Compile Include="NaiveStringMatching.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RabinKarpMatching.cs" />
+    <Compile Include="StringMatching.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

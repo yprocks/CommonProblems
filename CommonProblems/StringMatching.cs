@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CommonProblems
 {
-    class RabinKarpMatching
+    class StringMatching
     {
+
         private const int PRIME = 3;
-        private char[] Characters { get; set; }
 
-        public RabinKarpMatching()
-        {
-            Characters = new char[91];
-            for (int i = 0, k = 31; i < Characters.Length; i++, k++)
-                Characters[i] = (char)k;
-        }
-
-        public bool MatchString(string text, string pattern)
+        public bool RabinKarpPatternMatching(string text, string pattern)
         {
             int hash = FindHash(pattern);
             int oldHash = -1;
@@ -57,5 +51,42 @@ namespace CommonProblems
 
             return hashValue;
         }
+        
+        public bool NaiveStringMatching(string text, string pattern)
+        {
+            int n = text.Length;
+            int m = pattern.Length - 1;
+
+            for (int i = 0; i < n - m; i++)
+            {
+                for (int j = 0; j < pattern.Length; j++)
+                {
+                    if (pattern[j] != text[j + i])
+                        break;
+                    if (j == m)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        public bool KnuthMorrisPatternMatching(string text, string pattern)
+        {
+            int n = text.Length;
+            int m = pattern.Length - 1;
+
+            for (int i = 0; i < n - m; i++)
+            {
+                for (int j = 0; j < pattern.Length; j++)
+                {
+                    if (pattern[j] == text[j + i])
+                        continue;
+                    if (j == m)
+                        return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
