@@ -75,10 +75,8 @@ namespace CommonProblems
             int n = text.Length;
             int m = pattern.Length - 1;
             int[] prefix = GetPrefix(pattern);
-            int temp = 0;
-            int i = 0, k = 0, j = 0;
-
-
+            int i = 0, j = 0;
+            
             while (i < text.Length && j < pattern.Length)
             {
                 if (pattern[j] == text[i])
@@ -91,7 +89,6 @@ namespace CommonProblems
 
                 if (j == pattern.Length)
                     return true;
-
             }
             return false;
         }
