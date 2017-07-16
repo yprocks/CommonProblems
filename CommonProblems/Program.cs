@@ -14,15 +14,19 @@ namespace CommonProblems
             // q.Solution();
             // q.Print();
 
-            StringMatching mat = new StringMatching();
+            //StringMatching mat = new StringMatching();
             //bool res = mat.NaiveMatchString("This is my own text", "is");
             //Console.WriteLine(res);
 
             //bool res = mat.RabinKarpMatchString("abskabacmgdyl;", "bac");
             //Console.WriteLine(res);
 
-            bool res = mat.KnuthMorrisPatternMatching("abxabcabcaby", "abcaby");
-            Console.WriteLine(res);
+            //bool res = mat.KnuthMorrisPatternMatching("abxabcabcaby", "abcaby");
+            //Console.WriteLine(res);
+
+            TowersOfHannoi toh = new TowersOfHannoi();
+            toh.Solve(3);
+
             Console.ReadLine();
         }
     }
