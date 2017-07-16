@@ -56,12 +56,6 @@ namespace CommonProblems
                 array[k++] = highHalf[j++];
 
         }
-
-        private void swap(int[] array, int i, int j)
-        {
-            int temp = array[j];
-            array[j] = array[i];
-            array[i] = temp;
-        }
+        
     }
 }

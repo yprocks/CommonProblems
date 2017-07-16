@@ -27,7 +27,7 @@ namespace CommonProblems
             //TowersOfHannoi toh = new TowersOfHannoi();
             //toh.Solve(3);
 
-            int[] array = { 9, 6, 4, 8, 1, 2};
+            int[] array = { 9, 6, 4, 8, 1, 2, 7};
             var srt = new SortingAlgorithms();
             int[] sortedarray = srt.MergeSort(array);
 
