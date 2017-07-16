@@ -13,7 +13,7 @@ namespace CommonProblems
             // BackTrackQueenProblem q = new BackTrackQueenProblem(4);
             // q.Solution();
             // q.Print();
-            
+
             StringMatching mat = new StringMatching();
             //bool res = mat.NaiveMatchString("This is my own text", "is");
             //Console.WriteLine(res);
@@ -21,6 +21,8 @@ namespace CommonProblems
             //bool res = mat.RabinKarpMatchString("abskabacmgdyl;", "bac");
             //Console.WriteLine(res);
 
+            bool res = mat.KnuthMorrisPatternMatching("abxabcabcaby", "abcaby");
+            Console.WriteLine(res);
             Console.ReadLine();
         }
     }

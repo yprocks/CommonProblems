@@ -51,7 +51,7 @@ namespace CommonProblems
 
             return hashValue;
         }
-        
+
         public bool NaiveStringMatching(string text, string pattern)
         {
             int n = text.Length;
@@ -74,18 +74,53 @@ namespace CommonProblems
         {
             int n = text.Length;
             int m = pattern.Length - 1;
+            int[] prefix = GetPrefix(pattern);
+            int temp = 0;
+            int i = 0, k = 0, j = 0;
 
-            for (int i = 0; i < n - m; i++)
+
+            while (i < text.Length && j < pattern.Length)
             {
-                for (int j = 0; j < pattern.Length; j++)
+                if (pattern[j] == text[i])
                 {
-                    if (pattern[j] == text[j + i])
-                        continue;
-                    if (j == m)
-                        return true;
+                    i++;
+                    j++;
                 }
+                else if (j != 0) j = prefix[j - 1];
+                else i++;
+
+                if (j == pattern.Length)
+                    return true;
+
             }
             return false;
+        }
+
+        private int[] GetPrefix(string pattern)
+        {
+            int[] prefix = new int[pattern.Length];
+            prefix[0] = 0;
+            int i = 1;
+            for (int j = 0; j < pattern.Length; j++)
+                while (i < pattern.Length)
+                {
+                    if (pattern[i] == pattern[j])
+                    {
+                        prefix[i] = j + 1;
+                        i++; j++;
+                    }
+                    else if (j == 0)
+                    {
+                        prefix[i] = 0;
+                        i++;
+                    }
+                    else
+                    {
+                        int temp = j - 1;
+                        j = prefix[temp];
+                    }
+                }
+            return prefix;
         }
 
     }
