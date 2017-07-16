@@ -24,8 +24,16 @@ namespace CommonProblems
             //bool res = mat.KnuthMorrisPatternMatching("abxabcabcaby", "abcaby");
             //Console.WriteLine(res);
 
-            TowersOfHannoi toh = new TowersOfHannoi();
-            toh.Solve(3);
+            //TowersOfHannoi toh = new TowersOfHannoi();
+            //toh.Solve(3);
+
+            int[] array = { 9, 6, 4, 8, 1, 2};
+            var srt = new SortingAlgorithms();
+            int[] sortedarray = srt.MergeSort(array);
+
+            Console.WriteLine("\nAfter Sorting");
+            for (int i = 0; i < sortedarray.Length; i++)
+                Console.Write(sortedarray[i] + " ");
 
             Console.ReadLine();
         }
